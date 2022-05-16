@@ -1,10 +1,8 @@
 from http.server import HTTPServer, CGIHTTPRequestHandler
-from sqlalchemy import create_engine
 
-from database import Base
+from htbin.database import Base, engine
 
 server_address = ("", 8000)
-engine = create_engine('sqlite:///my_db.db', echo=True)
 
 httpd = HTTPServer(server_address, CGIHTTPRequestHandler)
 
